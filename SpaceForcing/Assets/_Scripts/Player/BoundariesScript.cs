@@ -21,8 +21,8 @@ public class BoundariesScript : MonoBehaviour
     {
         ScreenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));  // Getting the screen width and height with camera units.
 
-        ObjectWidth = transform.GetComponent<SpriteRenderer>().bounds.size.x / 2;   // Gives half of the spaceships width.
-        ObjectHeight = transform.GetComponent<SpriteRenderer>().bounds.size.y / 2;  // Gives half of the spaceships height.
+        ObjectWidth = transform.GetComponent<CapsuleCollider2D>().bounds.size.x / 2;   // Gives half of the spaceships width.
+        ObjectHeight = transform.GetComponent<CapsuleCollider2D>().bounds.size.y / 2;  // Gives half of the spaceships height.
     }
 
     

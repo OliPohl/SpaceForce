@@ -50,7 +50,12 @@ public class PlayerControllerScript : MonoBehaviour
         if (Input.GetButton("Fire1") && Time.time > nextFire)
             {
                 nextFire = Time.time + GameSettings.ReloadSpeed / 10;
-                Instantiate(Projectile, transform.position, Quaternion.identity);
+
+                Vector3 Pos = transform.position;
+                Pos.y = Pos.y - 0.2f;
+                Pos.x = Pos.x + 1f;
+
+                Instantiate(Projectile, Pos, Quaternion.identity);
             }
     }
 }
