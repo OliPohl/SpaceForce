@@ -7,6 +7,6 @@ using UnityEngine;
 public class GameSettings : ScriptableObject
 {
     [Header("Background Settings")]
-    [Range(0.0f, 10.0f)] [SerializeField] public float SkySpeed = 4.0f;
-    [Range(0.0f, 10.0f)] [SerializeField] public float WaterSpeed = 10.0f;
+    [Range(0.0f, 10f)] [SerializeField] public float SkySpeed = 0.01f;
+    [Range(0.0f, 10f)] [SerializeField] public float WaterSpeed = 0.015f;
 }

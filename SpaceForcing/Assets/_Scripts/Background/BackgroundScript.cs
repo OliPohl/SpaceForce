@@ -61,7 +61,7 @@ public class BackgroundScript : MonoBehaviour
             }
             else
             {
-                Object.transform.position -= new Vector3(GameSettings.WaterSpeed, 0, 0);    // Moves the Water to the left in the Speed set in GameSettings
+                Object.transform.position -= new Vector3(GameSettings.WaterSpeed / 150, 0, 0);    // Moves the Water to the left in the Speed set in GameSettings
             }
         }
         else // If its Sky
@@ -72,7 +72,7 @@ public class BackgroundScript : MonoBehaviour
             }
             else
             {
-                Object.transform.position -= new Vector3(GameSettings.SkySpeed, 0, 0); // Moves the Sky to the left in the Speed set in GameSettings
+                Object.transform.position -= new Vector3(GameSettings.SkySpeed / 150, 0, 0); // Moves the Sky to the left in the Speed set in GameSettings
             }
         }
 
