@@ -15,7 +15,13 @@ MonoBehaviour:
   SkySpeed: 2
   WaterSpeed: 3
   SpaceshipSpeed: 5
-  ProjectileSpeed: 5
-  ReloadSpeed: 4
+  ProjectileSpeed: 7
+  ReloadSpeed: 3
   MaxHealth: 3
   InvulnerableTime: 3
+  CubeSpawnrate: 7
+  CubeSpeed: 4
+  BobbingHeight: 5
+  CubeMaxHealth: 5
+  WallSpeed: 5
+  GateMaxHealth: 3
