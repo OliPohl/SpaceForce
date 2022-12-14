@@ -8,7 +8,6 @@ using UnityEngine;
     # This script makes the cubes go to the left.      #
     # It updates their color based on hp left          #
     # You are abele to make them bobb if isBobbing     #
-    # If isGate is on Changes Max Hp to Gate Max HP    #
     #                                                  #
     # Speed/Health is given in: GameSettings.cs        #
     # Color is given in: ColorSettings.cs              #
@@ -34,8 +33,7 @@ public class CubeScript : MonoBehaviour
     private float NextBob = 0.0f;
     
     // Change Later
-    [SerializeField] public bool isBobbing;   // Replace these by GameMaster.
-    [SerializeField] public bool isGate;      // Replace these by GameMaster.
+    [SerializeField] public bool isBobbing;   // Replace these by GameMaster
     
     void Start()
     {
@@ -46,15 +44,7 @@ public class CubeScript : MonoBehaviour
             Debug.LogError("Cube is missing a Rigidbody component");
         }
 
-
-        if (isGate) // randomizes health based on gate or cube
-        {
-            Health = Random.Range(1, GameSettings.GateMaxHealth+1);
-        }
-        else
-        {
-            Health = Random.Range(1, GameSettings.CubeMaxHealth+1);
-        }
+        Health = Random.Range(1, GameSettings.CubeMaxHealth+1);
 
         if (isBobbing)  // tages screen size and randomizes the starting bobbS
         { 
@@ -77,7 +67,7 @@ public class CubeScript : MonoBehaviour
     private void Move()
     {
         Vector3 TempVect = new Vector3(-1, 0, 0);   // Makes a temp vecotor that will be added to the current positon of the cube. "* Time.deltaTime" makes it so that it it frames(10 frames per CubeSpeed)
-        TempVect = TempVect.normalized * Time.deltaTime * GameSettings.CubeSpeed * 7;
+        TempVect = TempVect.normalized * Time.deltaTime * GameSettings.CubeSpeed * 7;      
 
         NextPos = transform.position + TempVect;
         if (isBobbing){Bobbing();}  // if bobbing add the new y to the nextPosition
@@ -94,7 +84,7 @@ public class CubeScript : MonoBehaviour
 
             if (Time.time > NextBob)
                 {
-                NextBob = Time.time + ((GameSettings.BobbingHeight * 2) / 7); 
+                NextBob = Time.time + ((GameSettings.CubeBobbingHeight * 2) / 7); 
                 BobbingUp = false;
                 }
         }
@@ -104,7 +94,7 @@ public class CubeScript : MonoBehaviour
 
             if (Time.time > NextBob)
                 {
-                NextBob = Time.time + ((GameSettings.BobbingHeight * 2) / 7); 
+                NextBob = Time.time + ((GameSettings.CubeBobbingHeight * 2) / 7); 
                 BobbingUp = true;
                 }
         }

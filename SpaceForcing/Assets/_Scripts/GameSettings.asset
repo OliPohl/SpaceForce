@@ -21,7 +21,9 @@ MonoBehaviour:
   InvulnerableTime: 3
   CubeSpawnrate: 7
   CubeSpeed: 4
-  BobbingHeight: 5
+  CubeBobbingHeight: 5
   CubeMaxHealth: 5
-  WallSpeed: 5
+  WallSpawnrate: 5
+  WallSpeed: 0.62
+  WallBobbingHeight: 5
   GateMaxHealth: 3

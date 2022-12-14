@@ -22,11 +22,13 @@ public class GameSettings : ScriptableObject
     [Header("Cube Settings")]
     [Range(0.0f, 10.0f)] [SerializeField] public float CubeSpawnrate = 5.0f;
     [Range(0.0f, 10.0f)] [SerializeField] public float CubeSpeed = 5.0f;
-    [Range(0.0f, 10.0f)] [SerializeField] public float BobbingHeight = 5.0f;
+    [Range(0.0f, 10.0f)] [SerializeField] public float CubeBobbingHeight = 5.0f;
     [Range(0, 10)] [SerializeField] public int CubeMaxHealth = 5;
 
 
     [Header("Wall Settings")]
+    [Range(0.0f, 10.0f)] [SerializeField] public float WallSpawnrate = 5.0f;
     [Range(0.0f, 10.0f)] [SerializeField] public float WallSpeed = 5.0f;
+    [Range(0.0f, 10.0f)] [SerializeField] public float WallBobbingHeight = 5.0f;
     [Range(0, 10)] [SerializeField] public int GateMaxHealth = 3;
 }
