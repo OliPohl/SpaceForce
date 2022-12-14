@@ -90,21 +90,21 @@ public class CubeScript : MonoBehaviour
     { 
         if (BobbingUp)
         {
-            NextPos.y = Mathf.Clamp(NextPos.y + (GameSettings.BobbingSpeed/100), ((ScreenBounds.y - ObjectHeight) * -1), (ScreenBounds.y - ObjectHeight));
+            NextPos.y = Mathf.Clamp(NextPos.y + 0.05f, ((ScreenBounds.y - ObjectHeight) * -1), (ScreenBounds.y - ObjectHeight));
 
             if (Time.time > NextBob)
                 {
-                NextBob = Time.time + ((10 - GameSettings.BobbingHeight) / 7); 
+                NextBob = Time.time + ((GameSettings.BobbingHeight * 2) / 7); 
                 BobbingUp = false;
                 }
         }
         else
         {
-            NextPos.y = Mathf.Clamp(NextPos.y - (GameSettings.BobbingSpeed/100), ((ScreenBounds.y - ObjectHeight) * -1), (ScreenBounds.y - ObjectHeight));
+            NextPos.y = Mathf.Clamp(NextPos.y - 0.05f, ((ScreenBounds.y - ObjectHeight) * -1), (ScreenBounds.y - ObjectHeight));
 
             if (Time.time > NextBob)
                 {
-                NextBob = Time.time + ((10 - GameSettings.BobbingHeight) / 7); 
+                NextBob = Time.time + ((GameSettings.BobbingHeight * 2) / 7); 
                 BobbingUp = true;
                 }
         }

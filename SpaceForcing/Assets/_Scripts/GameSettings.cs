@@ -22,7 +22,6 @@ public class GameSettings : ScriptableObject
     [Header("Cube Settings")]
     [Range(0.0f, 10.0f)] [SerializeField] public float CubeSpawnrate = 5.0f;
     [Range(0.0f, 10.0f)] [SerializeField] public float CubeSpeed = 5.0f;
-    [Range(0.0f, 10.0f)] [SerializeField] public float BobbingSpeed = 5.0f;
     [Range(0.0f, 10.0f)] [SerializeField] public float BobbingHeight = 5.0f;
     [Range(0, 10)] [SerializeField] public int CubeMaxHealth = 5;
 
