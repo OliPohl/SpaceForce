@@ -160,5 +160,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GameSettings: {fileID: 11400000, guid: da8a2bd3a44a7444bbd2f076c308db83, type: 2}
   ColorSettings: {fileID: 11400000, guid: 93c92196ad683264bac9f2f52d28ce1a, type: 2}
-  Bobbing: 0
-  Gate: 0
+  isBobbing: 1
+  isGate: 0

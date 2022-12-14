@@ -1,17 +1,39 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/*  
+    ####################################################
+    #                    CubeScript.cs                 #
+    #--------------------------------------------------#
+    # This script makes the cubes go to the left.      #
+    # It updates their color based on hp left          #
+    # You are abele to make them bobb if isBobbing     #
+    # If isGate is on Changes Max Hp to Gate Max HP    #
+    #                                                  #
+    # Speed/Health is given in: GameSettings.cs        #
+    # Color is given in: ColorSettings.cs              #
+    ####################################################
+*/ 
 public class CubeScript : MonoBehaviour
 {
     [SerializeField] private GameSettings GameSettings;
     [SerializeField] private ColorSettings ColorSettings;
 
+    // General
     private Rigidbody2D CubeRigidbody;
     private Material CubeMaterial;
     private int Health;
-    
+    private Vector3 NextPos;
 
+    // Bobbing
+    private Vector2 ScreenBounds;
+    private float ObjectWidth;
+    private float ObjectHeight;
+
+    private bool BobbingUp;
+    private float NextBob = 0.0f;
+    
+    // Change Later
     [SerializeField] public bool isBobbing;   // Replace these by GameMaster.
     [SerializeField] public bool isGate;      // Replace these by GameMaster.
     
@@ -25,13 +47,21 @@ public class CubeScript : MonoBehaviour
         }
 
 
-        if (isGate == true)
+        if (isGate) // randomizes health based on gate or cube
         {
             Health = Random.Range(1, GameSettings.GateMaxHealth+1);
         }
         else
         {
             Health = Random.Range(1, GameSettings.CubeMaxHealth+1);
+        }
+
+        if (isBobbing)  // tages screen size and randomizes the starting bobbS
+        { 
+            ScreenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));  // Getting the screen width and height with camera units.
+            ObjectHeight = transform.GetComponent<SpriteRenderer>().bounds.size.y / 2;  // Gives half of the cube height.
+
+            BobbingUp = Random.Range(0,2) == 1;
         }
     }
 
@@ -40,8 +70,8 @@ public class CubeScript : MonoBehaviour
     {
         Move();
         UpdateHealth();
-        if (isBobbing){Bobbing();}
     }
+    
 
 
     private void Move()
@@ -49,25 +79,39 @@ public class CubeScript : MonoBehaviour
         Vector3 TempVect = new Vector3(-1, 0, 0);   // Makes a temp vecotor that will be added to the current positon of the cube. "* Time.deltaTime" makes it so that it it frames(10 frames per CubeSpeed)
         TempVect = TempVect.normalized * Time.deltaTime * GameSettings.CubeSpeed * 7;
 
-        CubeRigidbody.MovePosition(transform.position + TempVect);
+        NextPos = transform.position + TempVect;
+        if (isBobbing){Bobbing();}  // if bobbing add the new y to the nextPosition
+
+        CubeRigidbody.MovePosition(NextPos);
     }
 
 
-    private void Bobbing()
+    private void Bobbing()  // Bobbes the cube up and down if activated
     { 
-        
-        
-        
-        
-        //ViewPos.y = Mathf.Clamp(ViewPos.y, ((ScreenBounds.y - ObjectHeight) * -1), (ScreenBounds.y - ObjectHeight));
-        // Vector3 TempVect = new Vector3(0, -1, 0);
-        // TempVect = TempVect.normalized * GameSettings.CubeSpeed * Time.deltaTime;
+        if (BobbingUp)
+        {
+            NextPos.y = Mathf.Clamp(NextPos.y + (GameSettings.BobbingSpeed/100), ((ScreenBounds.y - ObjectHeight) * -1), (ScreenBounds.y - ObjectHeight));
 
-        // CubeRigidbody.MovePosition(transform.position + TempVect);
+            if (Time.time > NextBob)
+                {
+                NextBob = Time.time + ((10 - GameSettings.BobbingHeight) / 7); 
+                BobbingUp = false;
+                }
+        }
+        else
+        {
+            NextPos.y = Mathf.Clamp(NextPos.y - (GameSettings.BobbingSpeed/100), ((ScreenBounds.y - ObjectHeight) * -1), (ScreenBounds.y - ObjectHeight));
+
+            if (Time.time > NextBob)
+                {
+                NextBob = Time.time + ((10 - GameSettings.BobbingHeight) / 7); 
+                BobbingUp = true;
+                }
+        }
     }
 
 
-    private void UpdateHealth()
+    private void UpdateHealth() // changes cube color to current health, color in ColorSettings
     {   
         switch(Health) 
         {
@@ -108,7 +152,7 @@ public class CubeScript : MonoBehaviour
     }
 
 
-    void OnBecameInvisible() 
+    void OnBecameInvisible() // Destroy cube if out of screen
     {
         Destroy(gameObject);
     }
