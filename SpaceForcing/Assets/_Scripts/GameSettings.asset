@@ -12,4 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a1500c07fabdc44ea22bec5ed26ce8e, type: 3}
   m_Name: GameSettings
   m_EditorClassIdentifier: 
-  ProjectileSpeed: 10
+  SkySpeed: 2
+  WaterSpeed: 3
+  SpaceshipSpeed: 5
+  ProjectileSpeed: 5
+  ReloadSpeed: 4
+  MaxHealth: 3
+  InvulnerableTime: 3
