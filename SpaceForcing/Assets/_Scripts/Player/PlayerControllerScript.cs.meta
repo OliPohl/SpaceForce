@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 9afa81d972c3ffa449a8a273b9ba2d76
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - GameSettings: {instanceID: 0}
+  - Projectile: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
