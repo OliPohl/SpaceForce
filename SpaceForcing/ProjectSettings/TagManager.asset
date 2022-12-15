@@ -52,3 +52,6 @@ TagManager:
   - name: Player
     uniqueID: 2301128517
     locked: 0
+  - name: Sniper
+    uniqueID: 243271051
+    locked: 0
