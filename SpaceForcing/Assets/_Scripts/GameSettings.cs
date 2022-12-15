@@ -31,4 +31,10 @@ public class GameSettings : ScriptableObject
     [Range(0.0f, 10.0f)] [SerializeField] public float WallSpeed = 5.0f;
     [Range(0.0f, 10.0f)] [SerializeField] public float WallBobbingHeight = 5.0f;
     [Range(0, 10)] [SerializeField] public int GateMaxHealth = 3;
+
+
+    [Header("Sniper Settings")]
+    [Range(1, 10)] [SerializeField] public int SniperCount = 4;
+    [Range(0.0f, 10.0f)] [SerializeField] public float AimingTime = 5.0f;
+    [Range(1, 10)] [SerializeField] public int AimingCycles = 4;
 }

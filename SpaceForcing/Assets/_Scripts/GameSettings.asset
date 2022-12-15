@@ -27,3 +27,6 @@ MonoBehaviour:
   WallSpeed: 5
   WallBobbingHeight: 5
   GateMaxHealth: 3
+  SniperCount: 4
+  AimingTime: 3
+  AimingCycles: 3
