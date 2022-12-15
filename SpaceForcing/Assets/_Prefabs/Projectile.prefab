@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 4673676936843363222}
   - component: {fileID: 8581397864076246293}
   - component: {fileID: 9089933139551405534}
-  - component: {fileID: -7245261940467542737}
   m_Layer: 0
   m_Name: Projectile
   m_TagString: Untagged
@@ -73,8 +72,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1993838779
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 0.93226576, b: 0, a: 1}
@@ -121,14 +120,3 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!210 &-7245261940467542737
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4798875214023313612}
-  m_Enabled: 1
-  m_SortingLayerID: -1993838779
-  m_SortingLayer: 1
-  m_SortingOrder: 0

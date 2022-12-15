@@ -114,7 +114,6 @@ public class SniperScript : MonoBehaviour
             {
                 BeamHighlight.SetActive(false);
                 BeamAttack.SetActive(false);
-                Aiming = true;
                 Count = 0;
 
                 if (!SniperSpawner.activeInHierarchy){Outro = true;} // if SniperSpawner is not active play outro
