@@ -24,6 +24,6 @@ MonoBehaviour:
   CubeBobbingHeight: 5
   CubeMaxHealth: 5
   WallSpawnrate: 5
-  WallSpeed: 0.62
+  WallSpeed: 5
   WallBobbingHeight: 5
   GateMaxHealth: 3

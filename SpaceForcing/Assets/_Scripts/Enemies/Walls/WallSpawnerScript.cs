@@ -1,7 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/*  
+    ####################################################
+    #               WallSpawnerScript.cs               #
+    #--------------------------------------------------#
+    # This script spawns walls to the right of the     #
+    # screen.                                          #
+    # Spawnrate is given in: GameSettings.cs           #
+    ####################################################
+*/ 
 public class WallSpawnerScript : MonoBehaviour
 {
     [SerializeField] private GameSettings GameSettings;
@@ -27,7 +35,7 @@ public class WallSpawnerScript : MonoBehaviour
     }
 
 
-    private void SpawnWalls()
+    private void SpawnWalls()   // Spawns walls
     {
         if (Time.time > NextSpawn)
         {
@@ -37,7 +45,7 @@ public class WallSpawnerScript : MonoBehaviour
                                         Random.Range(-5, 5),      // Gets object height and screen size to mark a spawn area
                                         0.0f);
 
-            Instantiate(WallSet, Position, Quaternion.identity);   // Spawns Cube
+            Instantiate(WallSet, Position, Quaternion.identity);   // Spawns wall
         }
     }
 }
