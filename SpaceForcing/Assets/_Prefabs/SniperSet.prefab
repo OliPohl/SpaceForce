@@ -362,7 +362,7 @@ Transform:
   m_GameObject: {fileID: 5898524398001260060}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 35, y: 1.5, z: 1}
+  m_LocalScale: {x: 40, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5898524398789937545}
@@ -450,7 +450,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5898524398205363184}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.691, y: 0, z: 0.17351237}
+  m_LocalPosition: {x: -20, y: 0, z: 0.17351237}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -851,7 +851,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5898524398600895745}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.691, y: 0, z: 0.17351237}
+  m_LocalPosition: {x: 20, y: 0, z: 0.17351237}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1082,7 +1082,7 @@ Transform:
   m_GameObject: {fileID: 5898524398672942120}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 35, y: 1.5, z: 1}
+  m_LocalScale: {x: 40, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5898524399198855770}
@@ -1358,6 +1358,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d172966d7fc1654dbe9d65fc1ec1d38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameSettings: {fileID: 11400000, guid: da8a2bd3a44a7444bbd2f076c308db83, type: 2}
+  SniperLeft: {fileID: 5898524398205363184}
+  SniperRight: {fileID: 5898524398600895745}
+  BeamHighlight: {fileID: 5898524398672942120}
+  BeamAttack: {fileID: 5898524398001260060}
 --- !u!1 &5898524399198855773
 GameObject:
   m_ObjectHideFlags: 0

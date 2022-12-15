@@ -18,9 +18,7 @@ public class WallScript : MonoBehaviour
     [SerializeField] private GameSettings GameSettings;
     [SerializeField] private ColorSettings ColorSettings;
 
-    [SerializeField] private GameObject WallTop;
     [SerializeField] private GameObject Gate;
-    [SerializeField] private GameObject WallBot;
 
 
     // Screen Catching

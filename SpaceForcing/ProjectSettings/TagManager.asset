@@ -6,6 +6,12 @@ TagManager:
   tags:
   - Background
   - Cube
+  - CubeSpawner
+  - WallSpawner
+  - SniperSpawner
+  - OverlordSpawner
+  - Projectile
+  - Wall
   layers:
   - Default
   - TransparentFX
