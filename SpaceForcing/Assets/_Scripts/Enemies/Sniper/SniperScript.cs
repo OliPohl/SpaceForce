@@ -110,10 +110,11 @@ public class SniperScript : MonoBehaviour
         else
         {
             BeamAttack.SetActive(true);
-            if (Count == (GameSettings.AimingCycles +2) *2) // if count is over AimingCycle fire for 2 Cycles then resets everything
+            if (Count == (GameSettings.AimingCycles +2) *2) // Resets all values after 2 cycles of attacking
             {
                 BeamHighlight.SetActive(false);
                 BeamAttack.SetActive(false);
+                Aiming = true;
                 Count = 0;
 
                 if (!SniperSpawner.activeInHierarchy){Outro = true;} // if SniperSpawner is not active play outro
